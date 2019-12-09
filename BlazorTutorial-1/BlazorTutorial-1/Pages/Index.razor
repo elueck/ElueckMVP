@@ -1,0 +1,50 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Intro to using c# string variables in the browser
+<br />
+<br />
+
+<div class="row">
+    <div class="form-group col-5">
+        Simply insert an @at symbol before the c# variable you want to insert within your html and Blazor will recognize the variable as a string/int variable (depending on how it was declared in c#). Here are some examples:
+
+        Try pressing that submit button below:
+    </div>
+
+    <div class="col-1"></div>
+
+    <div class="form-group col-5">
+        <textarea class="form-control" id="exampleFormControlTextarea3" style="font-family: Consolas" rows="7">@test</textarea>
+    </div>
+    <div class="col-6"><Counter></Counter></div>
+</div>
+
+<p>@counter</p>
+
+
+@code{
+    private int counter = 0;
+    private string at = "@";
+    private string test = "<h1>Counter</h1>"
+    + "\n"
+    + "<p>Current count: @currentCount</p>"
+    + "\n"
+    + "<button class=\"btn btn-primary\" @onclick=\"IncrementCount\">Click me</button>"
+    + "\n"
+    + "\n@code {\n"
+    + "    private int currentCount = 0;"
+    + "\n"
+    + "    private void IncrementCount()\n"
+    + "    {\n"
+    + "        currentCount++;\n"
+    + "    }\n"
+    + "}";
+
+    private void ExampleOne()
+    {
+        counter++;
+    }
+
+}
